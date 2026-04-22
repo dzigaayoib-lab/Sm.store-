@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SM.store - متجرك الإلكتروني الموثوق</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://i.postimg.cc/rF190PgG/file-00000000247471f485b2a8340b5faa80-1-removebg-preview-(1).png" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <img src="https://i.postimg.cc/rF190PgG/file-00000000247471f485b2a8340b5faa80-1-removebg-preview-(1).png" alt="SM.store Logo" class="logo">
+                <h1>SM.store</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="#men" class="nav-link">👔 ملابس الرجال</a>
+                <a href="#women" class="nav-link">👗 ملابس النساء</a>
+                <a href="#products" class="nav-link">📦 كل المنتجات</a>
+                <a href="#about" class="nav-link">ℹ️ عن المتجر</a>
+            </nav>
+            <button class="add-product-btn" onclick="toggleAddProductForm()">+ إضافة منتج</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>مرحباً بك في SM.store</h2>
+            <p>أفضل متجر للملابس المغربية العصرية</p>
+            <p class="hero-subtitle">جودة عالية • أسعار منافسة • خدمة عملاء ممتازة</p>
+            <button class="cta-button" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                👀 استكشف المنتجات
+            </button>
+        </div>
+        <div class="hero-shape"></div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">👔</div>
+                    <h3>ملابس الرجال</h3>
+                    <p>أحدث تشكيلة من ملابس الرجال الأنيقة</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">👗</div>
+                    <h3>ملابس النساء</h3>
+                    <p>مجموعة فاخرة من فساتين وملابس السيدات</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">👶</div>
+                    <h3>ملابس الأطفال</h3>
+                    <p>ملابس مريحة وآمنة للأطفال</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">👠</div>
+                    <h3>الأحذية</h3>
+                    <p>تشكيلة متنوعة من الأحذية الأنيقة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Product Form (Hidden by default) -->
+    <div id="addProductModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleAddProductForm()">&times;</span>
+            <h2>إضافة منتج جديد</h2>
+            <form id="addProductForm">
+                <div class="form-group">
+                    <label>اسم المنتج</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label>الوصف</label>
+                    <textarea id="productDescription" rows="4" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>السعر</label>
+                        <input type="number" id="productPrice" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label>اللون</label>
+                        <input type="text" id="productColor">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>الحجم</label>
+                        <input type="text" id="productSize">
+                    </div>
+                    <div class="form-group">
+                        <label>الكمية المتاحة</label>
+                        <input type="number" id="productQuantity" value="1" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>صورة المنتج</label>
+                    <input type="file" id="productImage" accept="image/*" required>
+                    <small>اختر صورة من جهازك</small>
+                </div>
+                <button type="submit" class="submit-btn">إضافة المنتج</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">منتج متاح</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">رضا العملاء</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">خدمة العملاء</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">⚡</span>
+                    <span class="stat-label">توصيل سريع</span>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section class="products-section" id="products">
+                <div class="section-header">
+                    <h2>المنتجات المتاحة</h2>
+                    <p class="section-subtitle">اكتشف مجموعتنا الحصرية من المنتجات الفاخرة</p>
+                </div>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded here -->
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about-section" id="about">
+                <div class="about-content">
+                    <h2>عن SM.store</h2>
+                    <p>نحن متجر إلكتروني متخصص في بيع الملابس الفاخرة والعصرية. نقدم أفضل تشكيلة من الملابس للرجال والنساء والأطفال بأسعار منافسة جداً.</p>
+                    <div class="features-list">
+                        <div class="feature">
+                            <span class="feature-icon">✔️</span>
+                            <span>ملابس فاخرة وعصرية</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✔️</span>
+                            <span>أسعار منافسة جداً</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✔️</span>
+                            <span>توصيل آمن وسريع</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✔️</span>
+                            <span>دعم عملاء ممتاز</span>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://i.postimg.cc/rF190PgG/file-00000000247471f485b2a8340b5faa80-1-removebg-preview-(1).png" alt="SM.store" class="about-image">
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="testimonials-section">
+                <h2>آراء العملاء</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"منتجات رائعة وجودة عالية جداً. أنصح الجميع بالتسوق من SM.store"</p>
+                        <span class="testimonial-author">- فاطمة من الجزائر</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"خدمة عملاء ممتازة وسريعة. التوصيل كان بسرعة البرق!"</p>
+                        <span class="testimonial-author">- محمد من فاس</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"أفضل متجر إلكتروني. الأسعار معقولة والجودة عالية جداً"</p>
+                        <span class="testimonial-author">- ليلى من الرباط</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content product-modal">
+            <span class="close" onclick="closeProductModal()">&times;</span>
+            <div class="product-detail">
+                <img id="modalProductImage" src="" alt="Product" class="modal-product-image">
+                <div class="product-info">
+                    <h2 id="modalProductName"></h2>
+                    <p id="modalProductDescription" class="description"></p>
+                    <div class="product-specs">
+                        <div class="spec">
+                            <strong>السعر:</strong>
+                            <span id="modalProductPrice"></span> دج
+                        </div>
+                        <div class="spec">
+                            <strong>اللون:</strong>
+                            <span id="modalProductColor"></span>
+                        </div>
+                        <div class="spec">
+                            <strong>الحجم:</strong>
+                            <span id="modalProductSize"></span>
+                        </div>
+                        <div class="spec">
+                            <strong>الكمية المتاحة:</strong>
+                            <span id="modalProductQuantity"></span>
+                        </div>
+                    </div>
+                    <div class="order-section">
+                        <div class="quantity-selector">
+                            <label>الكمية المطلوبة:</label>
+                            <input type="number" id="orderQuantity" min="1" value="1">
+                        </div>
+                        <button class="whatsapp-btn" onclick="orderViaWhatsApp()">
+                            📱 اطلب عبر WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section / Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SM.store</h3>
+                    <p>متجرك الإلكتروني الموثوق</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/212728958504" class="social-link whatsapp">💬</a>
+                        <a href="tel:+212728958504" class="social-link phone">📞</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>الروابط السريعة</h4>
+                    <ul>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#about">عن المتجر</a></li>
+                        <li><a href="#contact">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <p>📞 +212 728-958504</p>
+                    <p>💬 WhatsApp: +212 728-958504</p>
+                    <p>🌐 SM.store</p>
+                </div>
+                <div class="footer-section">
+                    <h4>ساعات العمل</h4>
+                    <p>من الاثنين إلى الجمعة</p>
+                    <p>من 9:00 صباحاً إلى 6:00 مساءً</p>
+                    <p>السبت والأحد مغلق</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SM.store - جميع الحقوق محفوظة</p>
+                <p>متجر إلكتروني موثوق | جودة عالية | خدمة ممتازة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/212728958504" class="floating-whatsapp" target="_blank" title="تواصل معنا عبر WhatsApp">
+        <span class="whatsapp-icon">💬</span>
+        <span class="whatsapp-text">WhatsApp</span>
+    </a>
+</body>
+</html>
